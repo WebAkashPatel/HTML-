@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PHP Code Hacks 31-50</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .code-block {
+            margin-bottom: 20px;
+        }
+
+        .code-block code {
+            display: block;
+            white-space: pre-wrap;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>PHP Code Hacks - 31 to 50</h1>
+
+            <div class="code-block">
+                <h2>31. Recursive Functions</h2>
+                <pre><code>
+function factorial($n) {
+    return $n <= 1 ? 1 : $n * factorial($n - 1);
+}
+echo factorial(5); // Outputs: 120
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>32. Read Directory Contents</h2>
+                <pre><code>
+$files = scandir('.');
+print_r($files); // List of files in the current directory
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>33. Simple Array Filtering</h2>
+                <pre><code>
+$nums = [1, 2, 3, 4, 5];
+$even = array_filter($nums, fn($n) => $n % 2 === 0);
+print_r($even); // Outputs: [2, 4]
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>34. Convert Object to Array</h2>
+                <pre><code>
+$obj = (object) ['a' => 1, 'b' => 2];
+$arr = (array) $obj;
+print_r($arr); // Outputs: ['a' => 1, 'b' => 2]
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>35. String Starts with Check</h2>
+                <pre><code>
+if (str_starts_with('Akash Patel', 'Akash')) {
+    echo 'Yes!';
+}
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>36. String Ends with Check</h2>
+                <pre><code>
+if (str_ends_with('filename.php', '.php')) {
+    echo 'This is a PHP file';
+}
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>37. Generate Random String</h2>
+                <pre><code>
+echo bin2hex(random_bytes(8)); // Outputs a random 16-character string
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>38. Convert String to Array</h2>
+                <pre><code>
+$string = 'one,two,three';
+$array = explode(',', $string);
+print_r($array); // Outputs: ['one', 'two', 'three']
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>39. Array to String</h2>
+                <pre><code>
+$array = ['one', 'two', 'three'];
+$string = implode(',', $array);
+echo $string; // Outputs: one,two,three
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>40. Use Spread Operator for Arrays</h2>
+                <pre><code>
+$array1 = [1, 2];
+$array2 = [...$array1, 3, 4];
+print_r($array2); // Outputs: [1, 2, 3, 4]
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>41. Array Unique Values</h2>
+                <pre><code>
+$array = [1, 1, 2, 3, 3];
+$unique = array_unique($array);
+print_r($unique); // Outputs: [1, 2, 3]
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>42. Randomize Array</h2>
+                <pre><code>
+$array = [1, 2, 3, 4];
+shuffle($array);
+print_r($array); // Outputs: Randomized array
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>43. Get Array Keys</h2>
+                <pre><code>
+$array = ['a' => 1, 'b' => 2];
+$keys = array_keys($array);
+print_r($keys); // Outputs: ['a', 'b']
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>44. Get Array Values</h2>
+                <pre><code>
+$array = ['a' => 1, 'b' => 2];
+$values = array_values($array);
+print_r($values); // Outputs: [1, 2]
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>45. Sort Array by Values</h2>
+                <pre><code>
+$array = [3, 1, 2];
+sort($array);
+print_r($array); // Outputs: [1, 2, 3]
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>46. Sort Array by Keys</h2>
+                <pre><code>
+$array = ['b' => 2, 'a' => 1];
+ksort($array);
+print_r($array); // Outputs: ['a' => 1, 'b' => 2]
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>47. Create Range of Numbers</h2>
+                <pre><code>
+$range = range(1, 5);
+print_r($range); // Outputs: [1, 2, 3, 4, 5]
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>48. Array Combine</h2>
+                <pre><code>
+$keys = ['a', 'b'];
+$values = [1, 2];
+$combined = array_combine($keys, $values);
+print_r($combined); // Outputs: ['a' => 1, 'b' => 2]
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>49. Use filter_var for Validation</h2>
+                <pre><code>
+$email = 'test@example.com';
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo 'Valid email';
+}
+            </code></pre>
+            </div>
+
+            <div class="code-block">
+                <h2>50. Use __DIR__ for Path</h2>
+                <pre><code>
+echo __DIR__; // Outputs the current directory
+            </code></pre>
+            </div>
+        </div>
+    </body>
+</html>
